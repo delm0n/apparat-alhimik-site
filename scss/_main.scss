@@ -1,0 +1,384 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style-type: none;
+}
+
+picture {
+  display: flex;
+}
+
+.will-change--active {
+  will-change: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  // max-width: calc(1590px + 10px * 2);
+  max-width: 1440px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 992px) {
+    max-width: calc(720px + 10px * 2);
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    max-width: calc(540px + 10px * 2);
+  }
+}
+
+.image-lazy {
+  opacity: 0;
+  transition: all 0.1s;
+
+  &--loaded {
+    opacity: 1;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+
+  @media (max-width: 576px) {
+    width: 6px;
+  }
+  background-color: rgba(239, 239, 239, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(57, 57, 57, 0.3);
+  z-index: 1;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(57, 57, 57, 0.45);
+  }
+
+  &:active {
+    background: rgba(57, 57, 57, 0.6);
+  }
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(239, 239, 239, 0.2);
+}
+
+*::selection {
+  background: rgba(206, 205, 205, 0.8);
+  color: #2b2b2b;
+}
+
+.img-wrap {
+  img {
+    max-width: 100%;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 113%;
+    text-align: center;
+    color: #323232;
+
+    @media (max-width: 1024px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 26px;
+      line-height: 34px;
+    }
+  }
+
+  .subtitle {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    text-align: center;
+    color: #323232;
+
+    @media (max-width: 1024px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+      line-height: 29px;
+    }
+  }
+}
+
+.alhimik-input {
+  display: block;
+  padding: 19px 22px;
+  border: 1px solid #8b8b8b;
+  border-radius: 10px;
+
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: #707070;
+  width: 100%;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: #707070;
+    opacity: 1;
+  }
+
+  @media (max-width: 576px) {
+    padding: 12px 10px;
+    font-size: 14px;
+    line-height: 21px;
+    border-radius: 5px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(-1px);
+    border: 1px solid rgb(86, 77, 77);
+    box-shadow: 0 0 7px 1px rgb(86 77 77 / 45%);
+  }
+
+  &--error {
+    cursor: default;
+    border: 1px solid rgb(214 85 85 / 90%) !important;
+    box-shadow: 0 0 7px 1px rgb(214 85 85 / 45%) !important;
+  }
+
+  &[type="tel"] {
+    font-family: "IBM Plex Sans";
+    font-weight: 400;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.collapse-enter-active,
+.collapse-leave-active {
+  overflow: hidden;
+  opacity: 0;
+}
+
+.collapse-enter,
+.collapse-leave-to {
+  height: 0;
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  width: max-content;
+  max-width: 100%;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+  }
+  div.box {
+    width: 26px;
+    height: 26px;
+    border: 2px solid #cecece;
+    border-radius: 2px;
+    background-color: white;
+    transition: 0.3s all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    @media (max-width: 576px) {
+      width: 20px;
+      height: 20px;
+    }
+
+    svg path {
+      display: none;
+    }
+  }
+
+  span {
+    color: #323232;
+    font-size: 20px;
+    font-family: "Raleway";
+    font-weight: 600;
+    line-height: 27px;
+
+    @media (max-width: 576px) {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 25px;
+    }
+  }
+
+  &:hover {
+    input[type="checkbox"]:not(:checked) + div {
+      border-color: #ffdd2d;
+      box-shadow: 0 0 4px 1px rgba(255, 221, 45, 0.3);
+    }
+  }
+
+  input[type="checkbox"]:checked + div {
+    background-color: #ffdd2d;
+    border: 2px solid #ffdd2d;
+    svg path {
+      display: block;
+      stroke-dasharray: 700;
+      animation: dash 2.3s linear alternate 1;
+      stroke: #323232;
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 822;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+.user-info {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    max-width: 408px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.coupon-container {
+  position: relative;
+  padding-bottom: 10px;
+  width: 100%;
+  font-family: "Raleway";
+
+  input[name="coupon"] {
+    transition: all 0.3s;
+    outline: 0;
+    width: 100%;
+    margin: 0 auto 10px;
+
+    &:disabled {
+      background-color: #fbfbfb !important;
+      color: rgba(0, 0, 0, 0.47);
+      user-select: none;
+      transition: all 0.3s 0.2s;
+      box-shadow: 0 6px 20px rgb(45 193 45 / 0%) !important;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0);
+      }
+
+      &:hover {
+        transform: translate(0) !important;
+      }
+    }
+
+    &.input-error {
+      border: 1px solid #be1704 !important;
+      box-shadow: 0 0 0 3px rgba(190, 23, 4, 0.5) !important;
+    }
+
+    &.input-success {
+      transition: all 0.2s !important;
+      background-color: #b8e0c5 !important;
+      color: rgba(0, 0, 0, 0) !important;
+      box-shadow: 0 6px 20px rgb(45 193 45 / 15%) !important;
+    }
+  }
+
+  span.coupon-success {
+    position: absolute;
+    display: block;
+    white-space: nowrap;
+    width: auto;
+    color: rgba(0, 0, 0, 0.6);
+    top: 50%;
+    transform: translateY(-100%);
+    left: 36px;
+    transition: opacity 0.1s;
+    font-size: 18px;
+    font-weight: 400;
+
+    @media (max-width: 479px) {
+      left: 50%;
+      transform: translateX(-50%) translateY(-100%);
+      text-align: center;
+    }
+  }
+
+  span.coupon-error {
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+    color: #be1704;
+    transition: all 0.3s;
+  }
+
+  .hide-enter-active,
+  .hide-leave-active {
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  .expand-enter-active,
+  .expand-leave-active {
+    overflow: hidden;
+    opacity: 0;
+  }
+
+  .expand-enter,
+  .expand-leave-to {
+    height: 0;
+  }
+}

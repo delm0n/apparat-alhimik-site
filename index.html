@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Аппарат Алхимик</title>
+    <meta name="description" content="Мета-описание" />
+
+    <link rel="shortcut icon" href="/favicon.svg" />
+
+    <link
+      rel="preload"
+      href="build/images/src/logo.webp"
+      as="image"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      href="build/images/header/header-img.webp"
+      as="image"
+      media="(min-width: 993px)"
+      type="image/webp"
+    />
+    <link
+      rel="preload"
+      href="build/images/header/header-img@05x.webp"
+      as="image"
+      type="image/webp"
+      media="(max-width:992px)"
+    />
+
+    <link
+      rel="preload"
+      href="fonts/raleway/raleway-v28-cyrillic_latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/raleway/raleway-v28-cyrillic_latin-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/raleway/raleway-v28-cyrillic_latin-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/raleway/raleway-v28-cyrillic_latin-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="preload"
+      href="fonts/ibm-plex-sans-3/ibm-plex-sans-v19-cyrillic_greek-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/ibm-plex-sans-3/ibm-plex-sans-v19-cyrillic_greek-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/ibm-plex-sans-3/ibm-plex-sans-v19-cyrillic_greek-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="fonts/ibm-plex-sans-3/ibm-plex-sans-v19-cyrillic_greek-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="build/css/main.min.css" />
+
+    <!-- jquery -->
+    <script src="js/apispn.ru_js-min_jquery-3.6.0.min.js"></script>
+    <!-- jquery -->
+  </head>
+  <body
+    data-goods='{"482840":{"name":"\u0410\u043b\u0445\u0438\u043c\u0438\u043a","oldPrice":19990,"price":12990,"oldPriceF":"19 990","priceF":"12 990","image":"","discount":0}}'
+  >
+    <div id="app"></div>
+
+    <script>
+      var year = "2023";
+      var phone = "8 800 250 59 32";
+      var webp = "webp";
+      var goodsJson = JSON.parse(document.body.getAttribute("data-goods"));
+
+      var testVersion = false;
+
+      var goods = {
+        alhimik: 482840,
+      };
+    </script>
+
+    <script src="build/main.min.js"></script>
+
+    <!-- fancybox -->
+    <script>
+      window.addEventListener("DOMContentLoaded", function (event) {
+        var fancyscc = document.createElement("link");
+        fancyscc.rel = "stylesheet";
+        fancyscc.href = "js/apispn.ru_css-min_fancybox-4.min.css";
+        document.head.insertBefore(
+          fancyscc,
+          document.head.childNodes[document.head.childNodes.length - 1]
+            .nextSibling
+        );
+
+        var fancyscript = document.createElement("script");
+        fancyscript.type = "text/javascript";
+        fancyscript.src = "js/apispn.ru_js-min_fancybox-4.min.js";
+        document.querySelector("body").appendChild(fancyscript);
+      });
+    </script>
+    <!-- fancybox -->
+
+    <!-- other jquery plugins -->
+    <script src="js/apispn.ru_js-min_jquery.maskedinput_new-mask.min.js"></script>
+    <!-- other jquery plugins -->
+  </body>
+</html>

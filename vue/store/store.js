@@ -52,16 +52,16 @@ export default createStore({
     setPromocode(state, json) {
       if (json.status === "success") {
         state.promocode.message = "Промокод применён";
-        state.promocode.status = json.status;
-        state.promocode.coupon = json.coupon;
-        state.promocode.id = json.id;
-        state.promocode.price = json.price;
+        // state.promocode.status = json.status;
+        // state.promocode.coupon = json.coupon;
+        // state.promocode.id = json.id;
+        // state.promocode.price = json.price;
       } else {
         state.promocode.message = "Промокод недействителен";
-        state.promocode.status = json.status;
-        state.promocode.coupon = "";
-        state.promocode.id = 0;
-        state.promocode.price = 0;
+        // state.promocode.status = json.status;
+        // state.promocode.coupon = "";
+        // state.promocode.id = 0;
+        // state.promocode.price = 0;
       }
     },
   },
